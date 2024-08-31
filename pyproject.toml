@@ -12,6 +12,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
 
+[tool.poetry.dependencies.tradekit-brokers]
+path = "packages/tradekit-brokers"
+develop = true
+
 [tool.poetry.group.dev.dependencies]
 autopep8 = "2.0.2"
 flake8 = "6.0.0"

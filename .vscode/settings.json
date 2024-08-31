@@ -1,8 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        // For each library in the project, add the path to the library here to avoid import errors.
-        // For example, if you have a packages in the project packages/my-lib the value should be
-        // "./packages/my-lib"
+        "./packages/tradekit-brokers"
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",

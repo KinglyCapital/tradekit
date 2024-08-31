@@ -1,0 +1,28 @@
+[tool.coverage.run]
+branch = true
+source = ["brokers"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report html:'../../coverage/packages/tradekit-brokers/html' --cov-report xml:'../../coverage/packages/tradekit-brokers/coverage.xml' --html='../../reports/packages/tradekit-brokers/unittests/html/index.html' --junitxml='../../reports/packages/tradekit-brokers/unittests/junit.xml'"
+
+[tool.poetry]
+name = "tradekit-brokers"
+version = "1.0.0"
+description = "Provides utility abstractions for interacting with API brokers"
+authors = []
+license = 'Proprietary'
+readme = 'README.md'
+
+[[tool.poetry.packages]]
+include = "brokers"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
