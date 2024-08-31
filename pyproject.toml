@@ -2,7 +2,7 @@
 autoActivate = true
 
 [tool.poetry]
-name = "nx-python-monorepo"
+name = "tradekit"
 version = "1.0.0"
 description = ""
 authors = []
