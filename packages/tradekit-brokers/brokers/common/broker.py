@@ -59,18 +59,20 @@ class MarketDataBarsParams:
 class MarketData(ABC):
     """Defines all methods exposed by a broker for fetching market data."""
 
-    @abstractmethod
-    def assets(self): ...
-
-    """Returns a list of assets available for trading on the broker."""
-
-    @abstractmethod
-    def bars(self, params: MarketDataBarsParams) -> BarDataFrame: ...
-
-    """Returns bars for a specific asset and timeframe."""
+    # @abstractmethod
+    # def assets(self):
+    #     """Returns a list of assets available for trading on the broker."""
+    #     pass
 
     @abstractmethod
-    def snapshot(self, symbol: str): ...
+    def bars(self, params: MarketDataBarsParams) -> BarDataFrame:
+        """Returns data bars for a specific asset, time window and timeframe."""
+        pass
+
+    # @abstractmethod
+    # def snapshot(self, symbol: str) -> Snapshoot:
+    #     """Returns a snapshot of the asset."""
+    #     pass
 
 
 class Account(ABC):
