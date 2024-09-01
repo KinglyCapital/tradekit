@@ -11,6 +11,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
+python-dotenv = "^1.0.1"
+pandera = "^0.20.3"
+pandas = "^2.2.2"
 
 [tool.poetry.dependencies.tradekit-brokers]
 path = "packages/tradekit-brokers"
