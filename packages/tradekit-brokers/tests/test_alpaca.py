@@ -8,15 +8,20 @@ from brokers.common.broker import MarketDataBarsParams
 from brokers.common.timeframe import TimeFramePresets
 
 
+@pytest.fixture
+def alpaca() -> AlpacaMarketData:
+    """Test AlpacaBroker class."""
+    return AlpacaMarketData()
+
+
 class TestAlpacaMarketData:
     """Test Alpaca Market Data implementation."""
 
-    @pytest.fixture
-    def alpaca(self):
-        """Test AlpacaBroker class."""
-        return AlpacaMarketData()
+    def test_alpaca_assets(self, alpaca: AlpacaMarketData):
+        assets = alpaca.assets()
+        assert len(assets) > 0
 
-    def test_alpaca_limit(self, alpaca: AlpacaMarketData):
+    def test_alpaca_bars_limit(self, alpaca: AlpacaMarketData):
         bars = alpaca.bars(
             MarketDataBarsParams(
                 symbol="AAPL",
@@ -28,7 +33,7 @@ class TestAlpacaMarketData:
 
         assert bars.shape[0] == 5
 
-    def test_alpaca_no_limit(self, alpaca: AlpacaMarketData):
+    def test_alpaca_bars_no_limit(self, alpaca: AlpacaMarketData):
         bars = alpaca.bars(
             MarketDataBarsParams(
                 symbol="AAPL",
@@ -39,7 +44,7 @@ class TestAlpacaMarketData:
 
         assert bars.shape[0] > 12
 
-    def test_alpaca_date_range(self, alpaca: AlpacaMarketData):
+    def test_alpaca_bars_date_range(self, alpaca: AlpacaMarketData):
         bars = alpaca.bars(
             MarketDataBarsParams(
                 symbol="AAPL",

@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Optional
 
 
+from brokers.common.asset import AssetDataFrame
 from brokers.common.bar import BarDataFrame
 from brokers.common.timeframe import TimeFrame
 
@@ -59,10 +60,10 @@ class MarketDataBarsParams:
 class MarketData(ABC):
     """Defines all methods exposed by a broker for fetching market data."""
 
-    # @abstractmethod
-    # def assets(self):
-    #     """Returns a list of assets available for trading on the broker."""
-    #     pass
+    @abstractmethod
+    def assets(self) -> AssetDataFrame:
+        """Returns a list of assets available for trading on the broker."""
+        pass
 
     @abstractmethod
     def bars(self, params: MarketDataBarsParams) -> BarDataFrame:

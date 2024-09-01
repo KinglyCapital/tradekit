@@ -9,8 +9,8 @@ BarTimestamp = Annotated[pd.DatetimeTZDtype, "ns", "UTC"]
 
 
 class Bar(DataFrameModel):
-    """Dataframe with columns representing the OHLCV (Open, High, Low, Close, Volume) data of a
-    financial asset in a specific time frame."""
+    """Defines OHLCV (Open, High, Low, Close, Volume) data of a financial asset in a
+    specific time frame."""
 
     symbol: Series[str]
     """The asset symbol of the bar."""
