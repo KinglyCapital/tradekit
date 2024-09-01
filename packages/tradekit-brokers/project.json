@@ -62,7 +62,8 @@
       ],
       "options": {
         "command": "poetry run pytest tests/",
-        "cwd": "packages/tradekit-brokers"
+        "cwd": "packages/tradekit-brokers",
+        "envFile": "{workspaceRoot}/.env.test"
       }
     }
   },
