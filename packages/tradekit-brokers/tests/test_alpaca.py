@@ -19,7 +19,7 @@ class TestAlpacaMarketData:
 
     def test_alpaca_assets(self, alpaca: AlpacaMarketData):
         assets = alpaca.assets()
-        assert len(assets) > 0
+        assert assets.shape[0] > 0
 
     def test_alpaca_bars_limit(self, alpaca: AlpacaMarketData):
         bars = alpaca.bars(

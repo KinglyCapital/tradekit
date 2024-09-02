@@ -17,4 +17,4 @@ class ApiKeys:
 class SqlLiteConfig:
     """Contains the path to the SQL Lite database."""
 
-    SQL_LITE_PATH = config.get("SQL_LITE_PATH")
+    SQLITE_PATH = config.get("SQLITE_PATH")

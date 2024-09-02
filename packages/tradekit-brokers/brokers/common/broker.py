@@ -9,6 +9,7 @@ from typing import Optional
 from brokers.common.asset import AssetDataFrame
 from brokers.common.bar import BarDataFrame
 from brokers.common.timeframe import TimeFrame
+from brokers.common.enums import Brokers
 
 
 @dataclass
@@ -123,4 +124,11 @@ class Trading(ABC):
 class Broker(MarketData, Account, Trading):
     """Defines all methods exposed by a broker."""
 
-    pass
+    def __init__(self, broker: Brokers) -> None:
+        self.broker = broker
+        self._validate_broker()
+
+    def _validate_broker(self):
+        """Validates the broker name. If the broker name is invalid, it raises a ValueError."""
+        if self.broker.value not in ["Alpaca", "Binance"]:
+            raise ValueError("Invalid broker name")

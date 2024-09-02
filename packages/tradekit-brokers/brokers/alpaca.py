@@ -9,11 +9,12 @@ from alpaca.data.models import BarSet
 from alpaca.trading import TradingClient
 from alpaca.trading.models import Asset as AlpacaAsset
 from alpaca.trading.requests import GetAssetsRequest
-from alpaca.trading.enums import AssetClass
+from alpaca.trading.enums import AssetClass as AlpacaAssetClass, AssetStatus as AlpacaAssetStatus
 
-from brokers.common.asset import AssetDataFrame
+from brokers.common.asset import AssetDataFrame, AssetDict
 from brokers.common.broker import MarketData, MarketDataBarsParams
 from brokers.common.bar import BarDataFrame
+from brokers.common.enums import AssetClass, AssetStatus, Brokers
 from brokers.config import ApiKeys
 
 
@@ -42,24 +43,28 @@ class AlpacaMarketData(MarketData):
 
     def assets(self) -> AssetDataFrame:
         """Fetches assets from the Alpaca API."""
-        request = GetAssetsRequest(asset_class=AssetClass.US_EQUITY)
+        request = GetAssetsRequest(asset_class=AlpacaAssetClass.US_EQUITY)
         assets_list = cast(List[AlpacaAsset], self._get_all_assets(request))
 
         # Normalize the data to the AssetDataFrame format.
         assets = [
-            {
-                "name": asset.name if asset.name else "",
-                "symbol": asset.symbol,
-                "exchange": asset.exchange.value,
-                "broker": "Alpaca",
-                "tradable": asset.tradable,
-                "asset_class": "equity",
-                "is_active": asset.status == "active",
+            AssetDict(
+                name=asset.name if asset.name else "",
+                symbol=asset.symbol,
+                exchange=asset.exchange.value,
+                broker=Brokers.ALPACA,
+                tradable=asset.tradable,
+                asset_class=AssetClass.EQUITY,
+                status=(
+                    AssetStatus.ACTIVE
+                    if asset.status == AlpacaAssetStatus.ACTIVE
+                    else AssetStatus.INACTIVE
+                ),
                 # TODO: In the future, we can add a logo URL here (alpaca broker API).
                 # Ref: https://docs.alpaca.markets/reference/get-v1beta1-logos-symbol-1
-                "url_logo": None,
-                "pairs": None,
-            }
+                url_logo=None,
+                pairs=None,
+            )
             for asset in assets_list
         ]
 

@@ -1,11 +1,19 @@
 """Defines the Bar dataframe shape for storing OHLCV data."""
 
-from typing import Annotated
 from pandera.typing import Series, DataFrame
 from pandera import DataFrameModel
 import pandas as pd
 
-BarTimestamp = Annotated[pd.DatetimeTZDtype, "ns", "UTC"]
+# BarTimestamp = Annotated[pd.DatetimeTZDtype, "ns", "UTC"]
+
+
+class BarTimestamp(pd.DatetimeTZDtype):
+    def __init__(self):
+        super().__init__(unit="ns", tz="UTC")
+
+    # Puedes agregar métodos personalizados aquí si necesitas funcionalidades específicas.
+    def __str__(self):
+        return "BarTimestampType(datetime64[ns, UTC])"
 
 
 class Bar(DataFrameModel):
@@ -15,7 +23,7 @@ class Bar(DataFrameModel):
     symbol: Series[str]
     """The asset symbol of the bar."""
 
-    timestamp: Series[BarTimestamp]
+    timestamp: Series[BarTimestamp]  # type: ignore
     """The timestamp of the bar, in seconds since the Unix epoch."""
 
     open: Series[float]

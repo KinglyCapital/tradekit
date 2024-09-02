@@ -63,8 +63,9 @@ class TimeFrame:
         if unit == TimeFrameUnit.Month and amount not in (1, 2, 3, 6, 12):
             raise ValueError("Month units can only be used with amount 1, 2, 3, 6 and 12")
 
-    def to_str(self) -> str:
-        """Converts the TimeFrame object to a string representation"""
+    @property
+    def name_value(self) -> str:
+        """The name of the TimeFrame. For example, '1m' for 1 minute."""
 
         match self.unit_value:
             case TimeFrameUnit.Minute:
