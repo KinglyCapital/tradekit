@@ -7,7 +7,7 @@ from pandera.typing import Series, DataFrame
 from brokers.common.enums import AssetClass, AssetStatus, Brokers
 
 
-class Asset(DataFrameModel):
+class _AssetModel(DataFrameModel):
     """Defines the data of an asset that can be traded by the broker."""
 
     name: Series[str]
@@ -43,7 +43,7 @@ class Asset(DataFrameModel):
     in the context of cryptocurrency exchanges or forex trading."""
 
 
-AssetDataFrame = DataFrame[Asset]
+AssetDataFrame = DataFrame[_AssetModel]
 """A DataFrame type that contains assets."""
 
 

@@ -4,19 +4,18 @@ from pandera.typing import Series, DataFrame
 from pandera import DataFrameModel
 import pandas as pd
 
-# BarTimestamp = Annotated[pd.DatetimeTZDtype, "ns", "UTC"]
-
 
 class BarTimestamp(pd.DatetimeTZDtype):
+    """Defines a timestamp for a bar in the format of a datetime64[ns] with a UTC."""
+
     def __init__(self):
         super().__init__(unit="ns", tz="UTC")
 
-    # Puedes agregar métodos personalizados aquí si necesitas funcionalidades específicas.
     def __str__(self):
-        return "BarTimestampType(datetime64[ns, UTC])"
+        return "BarTimestamp(datetime64[ns, UTC])"
 
 
-class Bar(DataFrameModel):
+class _BarModel(DataFrameModel):
     """Defines OHLCV (Open, High, Low, Close, Volume) data of a financial asset in a
     specific time frame."""
 
@@ -45,5 +44,5 @@ class Bar(DataFrameModel):
     """The volume-weighted average price of the bar."""
 
 
-BarDataFrame = DataFrame[Bar]
+BarDataFrame = DataFrame[_BarModel]
 """A DataFrame type that contains bars."""

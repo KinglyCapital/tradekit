@@ -3,7 +3,7 @@
 from datetime import datetime
 import pytest
 
-from brokers.alpaca import AlpacaMarketData
+from brokers.alpaca_broker import AlpacaMarketData
 from brokers.common.broker import MarketDataBarsParams
 from brokers.common.timeframe import TimeFramePresets
 

@@ -1,7 +1,7 @@
 from datetime import datetime
 import pytest
 
-from brokers.alpaca import AlpacaMarketData
+from brokers.alpaca_broker import AlpacaMarketData
 from brokers.common.asset import AssetDataFrame
 from brokers.common.bar import BarDataFrame
 from brokers.common.broker import MarketDataBarsParams

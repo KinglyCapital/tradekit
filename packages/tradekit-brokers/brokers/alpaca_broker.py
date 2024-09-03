@@ -2,11 +2,11 @@
 
 import pandas as pd
 from typing import List, cast, final
-from alpaca.data import StockHistoricalDataClient
+from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockBarsRequest
 from alpaca.data.timeframe import TimeFrame as AlpacaTimeFrame
 from alpaca.data.models import BarSet
-from alpaca.trading import TradingClient
+from alpaca.trading.client import TradingClient
 from alpaca.trading.models import Asset as AlpacaAsset
 from alpaca.trading.requests import GetAssetsRequest
 from alpaca.trading.enums import AssetClass as AlpacaAssetClass, AssetStatus as AlpacaAssetStatus
