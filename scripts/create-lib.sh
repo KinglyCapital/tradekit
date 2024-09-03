@@ -113,3 +113,12 @@ echo $COMMAND
 
 # Execute the command
 eval $COMMAND
+
+# Remove un-used files
+if [ $PUBLISHABLE == "true" ]; then
+    rm $DIRECTORY/.flake8
+    rm $DIRECTORY/.python-version
+    rm $DIRECTORY/$MODULENAME/hello.py
+    rm $DIRECTORY/tests/test_hello.py
+    rm $DIRECTORY/tests/conftest.py
+fi
