@@ -1,0 +1,28 @@
+[tool.coverage.run]
+branch = true
+source = ["trading"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report term --cov-report html:'../../coverage/packages/tradekit-trading/html' --cov-report xml:'../../coverage/packages/tradekit-trading/coverage.xml' --html='../../reports/packages/tradekit-trading/unittests/html/index.html' --junitxml='../../reports/packages/tradekit-trading/unittests/junit.xml'"
+
+[tool.poetry]
+name = "tradekit-trading"
+version = "1.0.0"
+description = "A collection of utility classes and functions designed to simplify and enhance trading operations."
+authors = []
+license = 'Proprietary'
+readme = 'README.md'
+
+[[tool.poetry.packages]]
+include = "trading"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

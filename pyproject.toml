@@ -15,12 +15,16 @@ python-dotenv = "^1.0.1"
 pandera = "^0.20.3"
 pandas = "^2.2.2"
 
+[tool.poetry.dependencies.tradekit-assets]
+path = "packages/tradekit-assets"
+develop = true
+
 [tool.poetry.dependencies.tradekit-brokers]
 path = "packages/tradekit-brokers"
 develop = true
 
-[tool.poetry.dependencies.tradekit-assets]
-path = "packages/tradekit-assets"
+[tool.poetry.dependencies.tradekit-trading]
+path = "packages/tradekit-trading"
 develop = true
 
 [tool.poetry.group.dev.dependencies]

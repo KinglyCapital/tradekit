@@ -2,6 +2,7 @@
     "python.analysis.extraPaths": [
         "./packages/tradekit-assets",
         "./packages/tradekit-brokers",
+        "./packages/tradekit-trading",
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",

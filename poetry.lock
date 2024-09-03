@@ -1009,7 +1009,7 @@ files = [
 [[package]]
 name = "tradekit-assets"
 version = "1.0.0"
-description = "Provides information classes related to assets"
+description = "Provides a set of classes and functions to manage assets and their data."
 optional = false
 python-versions = ">=3.9,<3.11"
 files = []
@@ -1034,6 +1034,19 @@ alpaca-py = "^0.30.1"
 [package.source]
 type = "directory"
 url = "packages/tradekit-brokers"
+
+[[package]]
+name = "tradekit-trading"
+version = "1.0.0"
+description = "A collection of utility classes and functions designed to simplify and enhance trading operations."
+optional = false
+python-versions = ">=3.9,<3.11"
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "packages/tradekit-trading"
 
 [[package]]
 name = "typeguard"
@@ -1304,4 +1317,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.11"
-content-hash = "d0a73f44122fec07a52898f7fdd4df227de34c4ff8930a0d17df5f0586451b59"
+content-hash = "4391ad7ed52ce2ffd7f33e8e29f997f4c4cbe9b7806b2c6c1cb9846acecb2f75"
