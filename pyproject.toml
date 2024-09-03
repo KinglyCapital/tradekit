@@ -19,6 +19,10 @@ pandas = "^2.2.2"
 path = "packages/tradekit-brokers"
 develop = true
 
+[tool.poetry.dependencies.tradekit-assets]
+path = "packages/tradekit-assets"
+develop = true
+
 [tool.poetry.group.dev.dependencies]
 autopep8 = "2.0.2"
 flake8 = "6.0.0"

@@ -1,0 +1,28 @@
+[tool.coverage.run]
+branch = true
+source = ["assets"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report term --cov-report html:'../../coverage/packages/tradekit-assets/html' --cov-report xml:'../../coverage/packages/tradekit-assets/coverage.xml' --html='../../reports/packages/tradekit-assets/unittests/html/index.html' --junitxml='../../reports/packages/tradekit-assets/unittests/junit.xml'"
+
+[tool.poetry]
+name = "tradekit-assets"
+version = "1.0.0"
+description = "Provides a set of classes and functions to manage assets and their data."
+authors = []
+license = 'Proprietary'
+readme = 'README.md'
+
+[[tool.poetry.packages]]
+include = "assets"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1007,6 +1007,19 @@ files = [
 ]
 
 [[package]]
+name = "tradekit-assets"
+version = "1.0.0"
+description = "Provides information classes related to assets"
+optional = false
+python-versions = ">=3.9,<3.11"
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "packages/tradekit-assets"
+
+[[package]]
 name = "tradekit-brokers"
 version = "1.0.0"
 description = "Provides utility abstractions for interacting with API brokers"
@@ -1291,4 +1304,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.11"
-content-hash = "d4b3969e4cb022d0c27d36090f0107959b3b2fc2622e7e180405f7020268b6df"
+content-hash = "d0a73f44122fec07a52898f7fdd4df227de34c4ff8930a0d17df5f0586451b59"
