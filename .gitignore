@@ -92,3 +92,6 @@ eggs/
 
 # MyPy
 .mypy_cache/
+
+# Some internal files
+**/packages/**/main.py
