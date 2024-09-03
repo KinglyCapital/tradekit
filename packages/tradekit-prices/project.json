@@ -1,0 +1,74 @@
+{
+  "name": "tradekit-prices",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/tradekit-prices/prices",
+  "targets": {
+    "lock": {
+      "executor": "@nxlv/python:run-commands",
+      "options": {
+        "command": "poetry lock --no-update",
+        "cwd": "packages/tradekit-prices"
+      }
+    },
+    "add": {
+      "executor": "@nxlv/python:add",
+      "options": {}
+    },
+    "update": {
+      "executor": "@nxlv/python:update",
+      "options": {}
+    },
+    "remove": {
+      "executor": "@nxlv/python:remove",
+      "options": {}
+    },
+    "build": {
+      "executor": "@nxlv/python:build",
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "options": {
+        "outputPath": "packages/tradekit-prices/dist",
+        "publish": true,
+        "lockedVersions": true,
+        "bundleLocalDependencies": true
+      }
+    },
+    "install": {
+      "executor": "@nxlv/python:install",
+      "options": {
+        "silent": false,
+        "args": "",
+        "cacheDir": ".cache/pypoetry",
+        "verbose": false,
+        "debug": false
+      }
+    },
+    "lint": {
+      "executor": "@nxlv/python:flake8",
+      "outputs": [
+        "{workspaceRoot}/reports/packages/tradekit-prices/pylint.txt"
+      ],
+      "options": {
+        "outputFile": "reports/packages/tradekit-prices/pylint.txt"
+      }
+    },
+    "test": {
+      "executor": "@nxlv/python:run-commands",
+      "outputs": [
+        "{workspaceRoot}/reports/packages/tradekit-prices/unittests",
+        "{workspaceRoot}/coverage/packages/tradekit-prices"
+      ],
+      "options": {
+        "command": "poetry run pytest tests/",
+        "cwd": "packages/tradekit-prices",
+        "envFile": "{workspaceRoot}/.env.test"
+      }
+    }
+  },
+  "tags": [
+    "type:package",
+    "scope:utility"
+  ]
+}

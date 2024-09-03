@@ -23,6 +23,10 @@ develop = true
 path = "packages/tradekit-brokers"
 develop = true
 
+[tool.poetry.dependencies.tradekit-prices]
+path = "packages/tradekit-prices"
+develop = true
+
 [tool.poetry.dependencies.tradekit-trading]
 path = "packages/tradekit-trading"
 develop = true
