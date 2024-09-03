@@ -55,6 +55,8 @@ class SQLiteMarketDataRepository(MarketDataRepository):
         con = self._connect_for_assets()
         query = f"SELECT * FROM {self.broker.value}"
         df = pd.read_sql(query, con=con)  # type: ignore
+        # Transform to boolean because it is stored as integer in SQLite.
+        df["tradable"] = df["tradable"].astype(bool)
         return AssetDataFrame(df)
 
     def save_bars(self, params: SaveBarsParams) -> SaveResult:
