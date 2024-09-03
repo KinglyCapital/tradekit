@@ -1,10 +1,10 @@
 """Contains the configuration for all brokers implementations."""
 
 import os
-from dotenv import dotenv_values
+from dotenv import load_dotenv
 
 # Get the environment variables from the .env file (or .env.test).
-config = dotenv_values()
+load_dotenv()
 
 
 class ApiKeys:
@@ -17,4 +17,4 @@ class ApiKeys:
 class SqlLiteConfig:
     """Contains the path to the SQL Lite database."""
 
-    SQLITE_PATH = config.get("SQLITE_PATH")
+    SQLITE_PATH = os.environ.get("SQLITE_PATH")
