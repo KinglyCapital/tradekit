@@ -55,6 +55,7 @@
     "**/reports": true,
     "**/coverage": true,
     "**/.mypy_cache": true,
-    "**/.coverage": true
+    "**/.coverage": true,
+    "**/.next": true
   }
 }
