@@ -3,13 +3,14 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Literal, Optional
 
+from prices.core.asset import AssetDataFrame
 from prices.core.bar import BarDataFrame
 from prices.core.broker import Broker
 from prices.core.timeframe import TimeFrame
 
 
 @dataclass
-class SaveParams:
+class SaveHistoricalParams:
     """Defines the parameters for saving historical price data."""
 
     symbol: str
@@ -18,13 +19,14 @@ class SaveParams:
 
 
 @dataclass
-class LoadParams:
+class LoadHistoricalParams:
     """Defines the parameters for loading historical price data."""
 
     symbol: str
     timeframe: TimeFrame
-    start_date: Optional[datetime] = None
-    end_date: Optional[datetime] = None
+    start: Optional[datetime] = None
+    end: Optional[datetime] = None
+    limit: Optional[int] = None
 
 
 @dataclass
@@ -46,11 +48,21 @@ class PriceRepository(ABC):
         self.broker = broker
 
     @abstractmethod
-    def save(self, params: SaveParams) -> SaveResult:
+    def save_assets(self, assets: AssetDataFrame) -> SaveResult:
+        """Save assets data."""
+        ...
+
+    @abstractmethod
+    def save_historical(self, params: SaveHistoricalParams) -> SaveResult:
         """Save historical price data."""
         ...
 
     @abstractmethod
-    def load(self, params: LoadParams) -> BarDataFrame:
+    def load_assets(self) -> AssetDataFrame:
+        """Load assets data."""
+        ...
+
+    @abstractmethod
+    def load_historical(self, params: LoadHistoricalParams) -> BarDataFrame:
         """Load historical price data."""
         ...

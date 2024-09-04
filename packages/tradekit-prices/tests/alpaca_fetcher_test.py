@@ -7,8 +7,8 @@ from prices.core.timeframe import TFPreset
 from prices.ports.price_fetcher import HistoricalPriceParams
 
 
-class TestAlpacaMarketData:
-    """Test Alpaca Market Data implementation."""
+class TestAlpacaPriceFetcher:
+    """Test Alpaca Price Fetcher Adapter."""
 
     @pytest.fixture
     def alpaca(self) -> AlpacaPriceFetcher:
@@ -16,7 +16,6 @@ class TestAlpacaMarketData:
 
     def test_assets(self, alpaca: AlpacaPriceFetcher):
         assets = alpaca.assets()
-        print(assets)
         assert assets.shape[0] > 0
 
     def test_historical_limit(self, alpaca: AlpacaPriceFetcher):
