@@ -93,5 +93,8 @@ eggs/
 # MyPy
 .mypy_cache/
 
+# Jupiter Notebooks
+*.ipynb
+
 # Some internal files
 **/packages/**/main.py

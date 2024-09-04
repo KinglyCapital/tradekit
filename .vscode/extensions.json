@@ -7,5 +7,9 @@
     "ms-python.flake8",
     "nrwl.angular-console",
     "ms-python.isort",
+    "ms-toolsai.jupyter",
+    "ms-toolsai.vscode-jupyter-cell-tags",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.vscode-jupyter-slideshow",
   ],
 }
