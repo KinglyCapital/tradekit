@@ -97,6 +97,10 @@ class SQLitePriceRepository(PriceRepository):
                 query += f" WHERE timestamp >= '{params.start}'"
             if params.end is not None:
                 query += f" AND timestamp <= '{params.end}'"
+
+            # Always order by timestamp to ensure give the most recent data.
+            query += " ORDER BY timestamp DESC"
+
             if params.limit is not None:
                 query += f" LIMIT {params.limit}"
 
