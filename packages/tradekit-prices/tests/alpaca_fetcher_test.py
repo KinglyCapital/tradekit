@@ -14,6 +14,11 @@ class TestAlpacaMarketData:
     def alpaca(self) -> AlpacaPriceFetcher:
         return AlpacaPriceFetcher()
 
+    def test_assets(self, alpaca: AlpacaPriceFetcher):
+        assets = alpaca.assets()
+        print(assets)
+        assert assets.shape[0] > 0
+
     def test_historical_limit(self, alpaca: AlpacaPriceFetcher):
         bars = alpaca.historical(
             HistoricalPriceParams(

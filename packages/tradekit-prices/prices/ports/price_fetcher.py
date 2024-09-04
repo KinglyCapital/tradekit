@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional
 
+from prices.core.asset import AssetDataFrame
 from prices.core.bar import BarDataFrame
 from prices.core.broker import Broker
 from prices.core.timeframe import TimeFrame
@@ -59,6 +60,14 @@ class PriceFetcher(ABC):
 
     def __init__(self, broker: Broker):
         self.broker = broker
+
+    def __str__(self):
+        return f"<{self.__class__.__name__}, {self.broker.value}>"
+
+    @abstractmethod
+    def assets(self) -> AssetDataFrame:
+        """Returns a list of assets available for fetching price data."""
+        ...
 
     @abstractmethod
     def historical(self, params: HistoricalPriceParams) -> BarDataFrame:
