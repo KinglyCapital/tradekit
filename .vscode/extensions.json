@@ -6,5 +6,6 @@
     "ms-python.black-formatter",
     "ms-python.flake8",
     "nrwl.angular-console",
+    "ms-python.isort",
   ],
 }

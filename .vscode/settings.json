@@ -7,8 +7,25 @@
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
     },
+    "isort.args": [
+        "--profile",
+        "black",
+        "--line-length",
+        "100",
+        "--src-path",
+        "./packages/tradekit-prices",
+        "--src-path",
+        "./packages/tradekit-assets",
+        "--src-path",
+        "./packages/tradekit-brokers",
+        "--src-path",
+        "./packages/tradekit-trading",
+    ],
     "python.terminal.activateEnvironment": true,
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "strict",
