@@ -6,7 +6,8 @@
     "./packages/tradekit-assets",
     "./packages/tradekit-brokers",
     "./packages/tradekit-prices",
-    "./packages/tradekit-trading"
+    "./packages/tradekit-trading",
+    "./apps/adan"
   ],
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -31,7 +32,9 @@
     "--src-path",
     "./packages/tradekit-brokers",
     "--src-path",
-    "./packages/tradekit-trading"
+    "./packages/tradekit-trading",
+     "--src-path",
+    "./apps/adan"
   ],
   /**
    * Typescript settings.
