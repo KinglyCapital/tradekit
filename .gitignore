@@ -101,4 +101,4 @@ eggs/
 *.ipynb
 
 # Some internal files
-**/packages/**/main.py
+**/main.py
