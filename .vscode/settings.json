@@ -36,7 +36,6 @@
   /**
    * Typescript settings.
    */
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // For json files and other stuff.
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
@@ -57,5 +56,15 @@
     "**/.mypy_cache": true,
     "**/.coverage": true,
     "**/.next": true
+  },
+  /**
+    * Json settings.
+    */
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
   }
 }
