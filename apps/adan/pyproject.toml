@@ -1,0 +1,32 @@
+[tool.coverage.run]
+branch = true
+source = ["adan"]
+
+[tool.coverage.report]
+exclude_lines = ["if TYPE_CHECKING:"]
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report term --cov-report html:'../../coverage/apps/adan/html' --cov-report xml:'../../coverage/apps/adan/coverage.xml' --html='../../reports/apps/adan/unittests/html/index.html' --junitxml='../../reports/apps/adan/unittests/junit.xml'"
+
+[tool.poetry]
+name = "adan"
+version = "1.0.0"
+description = "Provides an API to access the trading platform."
+authors = []
+license = "Proprietary"
+readme = "README.md"
+
+[[tool.poetry.packages]]
+include = "adan"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+
+[tool.poetry.dependencies.tradekit-prices]
+path = "../../packages/tradekit-prices"
+develop = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

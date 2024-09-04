@@ -5,31 +5,35 @@ autoActivate = true
 name = "tradekit"
 version = "1.0.0"
 description = ""
-authors = []
+authors = [ ]
 license = "Proprietary"
 readme = "README.md"
 
-[tool.poetry.dependencies]
-python = ">=3.9,<3.11"
-python-dotenv = "^1.0.1"
-pandera = "^0.20.3"
-pandas = "^2.2.2"
+  [tool.poetry.dependencies]
+  python = ">=3.9,<3.11"
+  python-dotenv = "^1.0.1"
+  pandera = "^0.20.3"
+  pandas = "^2.2.2"
 
-[tool.poetry.dependencies.tradekit-assets]
-path = "packages/tradekit-assets"
-develop = true
+    [tool.poetry.dependencies.tradekit-assets]
+    path = "packages/tradekit-assets"
+    develop = true
 
-[tool.poetry.dependencies.tradekit-brokers]
-path = "packages/tradekit-brokers"
-develop = true
+    [tool.poetry.dependencies.tradekit-brokers]
+    path = "packages/tradekit-brokers"
+    develop = true
 
-[tool.poetry.dependencies.tradekit-prices]
-path = "packages/tradekit-prices"
-develop = true
+    [tool.poetry.dependencies.tradekit-prices]
+    path = "packages/tradekit-prices"
+    develop = true
 
-[tool.poetry.dependencies.tradekit-trading]
-path = "packages/tradekit-trading"
-develop = true
+    [tool.poetry.dependencies.tradekit-trading]
+    path = "packages/tradekit-trading"
+    develop = true
+
+    [tool.poetry.dependencies.adan]
+    path = "apps/adan"
+    develop = true
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "2.0.2"
@@ -42,5 +46,5 @@ mypy = "^1.11.2"
 ipykernel = "^6.29.5"
 
 [build-system]
-requires = ["poetry-core==1.1.0"]
+requires = [ "poetry-core==1.1.0" ]
 build-backend = "poetry.core.masonry.api"
