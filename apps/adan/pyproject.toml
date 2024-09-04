@@ -22,6 +22,8 @@ include = "adan"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
+fastapi = "^0.112.2"
+uvicorn = "^0.30.6"
 
 [tool.poetry.dependencies.tradekit-prices]
 path = "../../packages/tradekit-prices"
