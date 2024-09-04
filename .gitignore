@@ -102,3 +102,4 @@ eggs/
 
 # Some internal files
 **/main.py
+!apps/adan/adan/main.py
