@@ -1,46 +1,60 @@
 {
-    "python.analysis.extraPaths": [
-        "./packages/tradekit-assets",
-        "./packages/tradekit-brokers",
-        "./packages/tradekit-prices",
-        "./packages/tradekit-trading",
-    ],
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        },
+  /**
+   * Python settings.
+   */
+  "python.analysis.extraPaths": [
+    "./packages/tradekit-assets",
+    "./packages/tradekit-brokers",
+    "./packages/tradekit-prices",
+    "./packages/tradekit-trading"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.terminal.activateEnvironment": true,
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "strict",
+  "black-formatter.args": ["--line-length", "100"],
+  "isort.args": [
+    "--profile",
+    "black",
+    "--line-length",
+    "100",
+    "--src-path",
+    "./packages/tradekit-prices",
+    "--src-path",
+    "./packages/tradekit-assets",
+    "--src-path",
+    "./packages/tradekit-brokers",
+    "--src-path",
+    "./packages/tradekit-trading"
+  ],
+  /**
+   * Typescript settings.
+   */
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // For json files and other stuff.
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always" // TSX auto format on save ESLint
     },
-    "isort.args": [
-        "--profile",
-        "black",
-        "--line-length",
-        "100",
-        "--src-path",
-        "./packages/tradekit-prices",
-        "--src-path",
-        "./packages/tradekit-assets",
-        "--src-path",
-        "./packages/tradekit-brokers",
-        "--src-path",
-        "./packages/tradekit-trading",
-    ],
-    "python.terminal.activateEnvironment": true,
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "strict",
-    "black-formatter.args": [
-        "--line-length",
-        "100"
-    ],
-    // Exclude files and folders from the explorer to minimize clutter.
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/.pytest_cache": true,
-        "**/.venv": true,
-        "**/reports": true,
-        "**/coverage": true,
-        "**/.mypy_cache": true,
-        "**/.coverage": true
-    },
+    "editor.tabSize": 2
+  },
+  /**
+   * General settings.
+   */
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.venv": true,
+    "**/reports": true,
+    "**/coverage": true,
+    "**/.mypy_cache": true,
+    "**/.coverage": true
+  }
 }

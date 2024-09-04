@@ -11,5 +11,7 @@
     "ms-toolsai.vscode-jupyter-cell-tags",
     "ms-toolsai.jupyter-keymap",
     "ms-toolsai.vscode-jupyter-slideshow",
-  ],
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner"
+  ]
 }
