@@ -1,0 +1,9 @@
+{
+  "name": "eva",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/eva",
+  "projectType": "application",
+  "tags": ["type: app", "scope:trading", "lang:typescript"],
+  "// targets": "to see all targets run: nx show project eva --web",
+  "targets": {}
+}
