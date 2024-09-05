@@ -1,12 +1,7 @@
 'use client';
 
-import { ColorType, IChartApi, UTCTimestamp, createChart } from 'lightweight-charts';
+import { ColorType, IChartApi, createChart } from 'lightweight-charts';
 import React, { useEffect, useRef } from 'react';
-
-type ChartData = {
-  time: UTCTimestamp | string;
-  value: number;
-};
 
 type ChartColors = {
   backgroundColor?: string;
@@ -17,7 +12,7 @@ type ChartColors = {
 };
 
 interface ChartComponentProps {
-  data: ChartData[];
+  data: any[];
   colors?: ChartColors;
 }
 
@@ -27,7 +22,7 @@ export const ChartComponent: React.FC<ChartComponentProps> = (props) => {
     colors: {
       backgroundColor = 'white',
       lineColor = '#2962FF',
-      textColor = 'white',
+      textColor = 'black',
       areaTopColor = '#2962FF',
       areaBottomColor = 'rgba(41, 98, 255, 0.28)',
     } = {},
@@ -51,7 +46,7 @@ export const ChartComponent: React.FC<ChartComponentProps> = (props) => {
         textColor,
       },
       width: chartContainerRef.current.clientWidth,
-      height: 800,
+      height: 1200,
     });
 
     chartRef.current = chart;

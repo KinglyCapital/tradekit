@@ -1,14 +1,9 @@
-import { getData } from './actions';
-import { ChartComponent } from './components';
-
-export function Chart(props?: any) {
-  return <ChartComponent {...props} data={getData()}></ChartComponent>;
-}
+import { Historical } from '@eva/components';
 
 export default function Index() {
   return (
     <div>
-      <Chart />
+      <Historical />
     </div>
   );
 }
