@@ -6,6 +6,7 @@
     "./packages/tradekit-assets",
     "./packages/tradekit-brokers",
     "./packages/tradekit-common",
+    "./packages/tradekit-data",
     "./packages/tradekit-prices",
     "./packages/tradekit-trading",
     "./apps/adan"
@@ -36,6 +37,8 @@
     "./packages/tradekit-trading",
     "--src-path",
     "./packages/tradekit-common",
+    "--src-path",
+    "./packages/tradekit-data",
      "--src-path",
     "./apps/adan"
   ],

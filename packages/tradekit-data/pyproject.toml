@@ -1,0 +1,28 @@
+[tool.coverage.run]
+branch = true
+source = ["data"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report term --cov-report html:'../../coverage/packages/tradekit-data/html' --cov-report xml:'../../coverage/packages/tradekit-data/coverage.xml' --html='../../reports/packages/tradekit-data/unittests/html/index.html' --junitxml='../../reports/packages/tradekit-data/unittests/junit.xml'"
+
+[tool.poetry]
+name = "tradekit-data"
+version = "1.0.0"
+description = "Provides all the necessary abstractions related to market data for trading."
+authors = []
+license = 'Proprietary'
+readme = 'README.md'
+
+[[tool.poetry.packages]]
+include = "data"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

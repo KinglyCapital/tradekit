@@ -39,6 +39,10 @@ develop = true
 path = "packages/tradekit-common"
 develop = true
 
+[tool.poetry.dependencies.tradekit-data]
+path = "packages/tradekit-data"
+develop = true
+
 [tool.poetry.group.dev.dependencies]
 autopep8 = "2.0.2"
 flake8 = "6.0.0"

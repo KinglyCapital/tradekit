@@ -1825,6 +1825,19 @@ type = "directory"
 url = "packages/tradekit-common"
 
 [[package]]
+name = "tradekit-data"
+version = "1.0.0"
+description = "Provides all the necessary abstractions related to market data for trading."
+optional = false
+python-versions = ">=3.9,<3.11"
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "packages/tradekit-data"
+
+[[package]]
 name = "tradekit-prices"
 version = "1.0.0"
 description = "A collection of utility classes for downloading price data from brokers."
@@ -2167,4 +2180,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.11"
-content-hash = "89e0207d4bbd08b03f15ac4ab024992a8dc202d8c72528347cb337bdb7e8e71d"
+content-hash = "c2dee0a479fc1f2628926ed889760a9fcab03194192a4d1fba33e9ac6c119e1f"
