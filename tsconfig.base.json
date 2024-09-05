@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@eva/components": ["./apps/eva/src/components/index.ts"],
+      "@eva/hooks": ["./apps/eva/src/hooks/index.ts"],
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

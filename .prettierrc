@@ -3,7 +3,7 @@
   "printWidth": 100,
   "singleQuote": true,
   "semi": true,
-  "importOrder": ["^[./]"],
+  "importOrder": ["^@eva/(.*)$", "^[./]"],
   "importOrderParserPlugins": ["typescript", "jsx", "classProperties", "decorators-legacy"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
