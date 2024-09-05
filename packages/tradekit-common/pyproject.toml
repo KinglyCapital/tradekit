@@ -1,0 +1,29 @@
+[tool.coverage.run]
+branch = true
+source = ["common"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report term --cov-report html:'../../coverage/packages/tradekit-common/html' --cov-report xml:'../../coverage/packages/tradekit-common/coverage.xml' --html='../../reports/packages/tradekit-common/unittests/html/index.html' --junitxml='../../reports/packages/tradekit-common/unittests/junit.xml'"
+
+[tool.poetry]
+name = "tradekit-common"
+version = "1.0.0"
+description = "Provides global common utilities like classes, infrastructure components, etc."
+authors = []
+license = 'Proprietary'
+readme = 'README.md'
+
+[[tool.poetry.packages]]
+include = "common"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+alpaca-py = "^0.30.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
