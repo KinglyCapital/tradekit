@@ -12,7 +12,7 @@ addopts = "--cov --cov-fail-under=100 --cov-report term --cov-report html:'../..
 [tool.poetry]
 name = "tradekit-brokers"
 version = "1.0.0"
-description = "Provides utility abstractions for interacting with API brokers"
+description = "Provides information related to brokers and their APIs."
 authors = []
 license = 'Proprietary'
 readme = 'README.md'

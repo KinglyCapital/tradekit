@@ -1,3 +1,3 @@
 # TradeKit Brokers Package
 
-Provides utility abstractions for interacting with API brokers
+Provides information related to brokers and their APIs.
