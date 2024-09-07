@@ -17,7 +17,7 @@ class PricesService:
 
     def get_historical(self):
         df = self.repository.load_historical(
-            LoadHistoricalParams(symbol="AAPL", timeframe=TFPreset.Tf_4h, limit=100)
+            LoadHistoricalParams(symbol="AAPL", timeframe=TFPreset.Tf_4h, limit=500)
         )
         df = format_datetime(df)
 
