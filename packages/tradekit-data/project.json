@@ -28,7 +28,7 @@
       "outputs": ["{projectRoot}/dist"],
       "options": {
         "outputPath": "packages/tradekit-data/dist",
-        "publish": false,
+        "publish": true,
         "lockedVersions": true,
         "bundleLocalDependencies": true
       }
