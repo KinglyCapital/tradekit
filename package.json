@@ -11,6 +11,7 @@
     "@nx/js": "19.6.4",
     "@nx/next": "19.6.4",
     "@nx/react": "19.6.4",
+    "@nx/workspace": "^19.6.5",
     "@nxlv/python": "^19.0.2",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
