@@ -4,10 +4,8 @@
    */
   "python.analysis.extraPaths": [
     "./packages/tradekit-assets",
-    "./packages/tradekit-brokers",
     "./packages/tradekit-common",
     "./packages/tradekit-data",
-    "./packages/tradekit-prices",
     "./packages/tradekit-trading",
     "./apps/adan"
   ],
@@ -28,17 +26,13 @@
     "--line-length",
     "100",
     "--src-path",
-    "./packages/tradekit-prices",
-    "--src-path",
     "./packages/tradekit-assets",
-    "--src-path",
-    "./packages/tradekit-brokers",
-    "--src-path",
-    "./packages/tradekit-trading",
     "--src-path",
     "./packages/tradekit-common",
     "--src-path",
     "./packages/tradekit-data",
+    "--src-path",
+    "./packages/tradekit-trading",
      "--src-path",
     "./apps/adan"
   ],
@@ -64,7 +58,8 @@
     "**/coverage": true,
     "**/.mypy_cache": true,
     "**/.coverage": true,
-    "**/.next": true
+    "**/.next": true,
+    "**/dist": true
   },
   /**
     * Json settings.
@@ -75,5 +70,18 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace"
-  }
+  },
+
+  /**
+   * Pytest settings.
+   */
+  "python.testing.pytestArgs": [
+    "packages/tradekit-data/tests",
+    "packages/tradekit-common/tests",
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestPath": "./.venv/bin/pytest",
+  "python.defaultInterpreterPath": "./.venv/bin/python",
+  "python.poetryPath": ".venv/bin/poetry",
 }
